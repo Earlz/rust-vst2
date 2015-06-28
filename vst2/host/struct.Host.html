@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Host` struct in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Host">
+
+    <title>vst2::host::Host - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>host</a></p><script>window.sidebarCurrent = {name: 'Host', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>host</a>::<wbr><a class='struct' href=''>Host</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-5771' class='srclink' href='../../src/vst2/host.rs.html#83-86' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Host {
+    // some fields omitted
+}</pre><div class='docblock'><p>A reference to the host which allows the plugin to call back and access information.</p>
+
+<h1 id="panics" class='section-header'><a
+                           href="#panics">Panics</a></h1>
+<p>All methods in this struct will panic if the plugin has not yet been initialized. In practice,
+this can only occur if the plugin queries the host for information when <code>Default::default()</code> is
+called.</p>
+<pre id='rust-example-rendered' class='rust '>
+<span class='kw'>struct</span> <span class='ident'>ExamplePlugin</span>;
+
+<span class='kw'>impl</span> <span class='ident'>Default</span> <span class='kw'>for</span> <span class='ident'>ExamplePlugin</span> {
+    <span class='kw'>fn</span> <span class='ident'>default</span>() <span class='op'>-&gt;</span> <span class='ident'>ExamplePlugin</span> {
+        <span class='comment'>// Will panic, don&#39;t do this. If needed, you can query</span>
+        <span class='comment'>// the host during initialization via Vst::new()</span>
+        <span class='kw'>let</span> <span class='ident'>host</span>: <span class='ident'>Host</span> <span class='op'>=</span> <span class='ident'>Default</span>::<span class='ident'>default</span>();
+        <span class='kw'>let</span> <span class='ident'>version</span> <span class='op'>=</span> <span class='ident'>host</span>.<span class='ident'>vst_version</span>();
+
+        <span class='comment'>// ...</span>
+    }
+}
+</pre>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../vst2/host/struct.Host.html' title='vst2::host::Host'>Host</a></code></h3><div class='impl-items'><h4 id='method.automate' class='method'><code>fn <a href='#method.automate' class='fnname'>automate</a>(&amp;mut self, index: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, value: <a href='http://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>)</code></h4>
+<div class='docblock'><p>Notify the host that a parameter value was changed.</p>
+</div><h4 id='method.vst_version' class='method'><code>fn <a href='#method.vst_version' class='fnname'>vst_version</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></h4>
+<div class='docblock'><p>Get the VST API version supported by the host e.g. <code>2400 = VST 2.4</code>.</p>
+</div><h4 id='method.get_plugin_id' class='method'><code>fn <a href='#method.get_plugin_id' class='fnname'>get_plugin_id</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></h4>
+<div class='docblock'><p>Get the plugin ID the host is requesting to load.</p>
+
+<p>This is only useful for shell plugins where this value will change the plugin returned.
+<code>TODO: implement shell plugins</code></p>
+</div><h4 id='method.idle' class='method'><code>fn <a href='#method.idle' class='fnname'>idle</a>(&amp;self)</code></h4>
+<div class='docblock'><p>Tell the host that it can idle.</p>
+
+<p>This is useful when the plugin is doing something such as mouse tracking in the UI.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../vst2/host/struct.Host.html' title='vst2::host::Host'>Host</a></code></h3><div class='docblock'><p><code>Host</code> implements <code>Default</code> so that the plugin can implement <code>Default</code> and have a <code>Host</code> field.</p>
+</div><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../vst2/host/struct.Host.html' title='vst2::host::Host'>Host</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+            <p>
+                Search functions by type signature (e.g.
+                <code>vec -> usize</code>)
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

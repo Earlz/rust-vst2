@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Host","A reference to the host which allows the plugin to call back and access information."]]});

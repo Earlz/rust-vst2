@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Info` struct in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Info">
+
+    <title>vst2::plugin::Info - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>plugin</a></p><script>window.sidebarCurrent = {name: 'Info', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>plugin</a>::<wbr><a class='struct' href=''>Info</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-7891' class='srclink' href='../../src/vst2/plugin.rs.html#292-346' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Info {
+    pub name: <a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub vendor: <a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub presets: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub parameters: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub inputs: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub outputs: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub unique_id: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub version: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub category: <a class='enum' href='../../vst2/plugin/enum.Category.html' title='vst2::plugin::Category'>Category</a>,
+    pub initial_delay: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub preset_chunks: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub f64_precision: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+    pub silent_when_stopped: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+}</pre><div class='docblock'><p>A structure representing static plugin information.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.name'><code>name</code></td><td><div class='docblock'><p>Plugin Name.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.vendor'><code>vendor</code></td><td><div class='docblock'><p>Plugin Vendor.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.presets'><code>presets</code></td><td><div class='docblock'><p>Number of different presets.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.parameters'><code>parameters</code></td><td><div class='docblock'><p>Number of parameters.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.inputs'><code>inputs</code></td><td><div class='docblock'><p>Number of inputs.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.outputs'><code>outputs</code></td><td><div class='docblock'><p>Number of outputs.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.unique_id'><code>unique_id</code></td><td><div class='docblock'><p>Unique plugin ID. Can be registered with Steinberg to prevent conflicts with other plugins.</p>
+
+<p>This ID is used to identify a plugin during save and load of a preset and project.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.version'><code>version</code></td><td><div class='docblock'><p>Plugin version (e.g. 0001 = <code>v0.0.0.1</code>, 1283 = <code>v1.2.8.3</code>).</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.category'><code>category</code></td><td><div class='docblock'><p>Plugin category. Possible values are found in <code>enums::PluginCategory</code>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.initial_delay'><code>initial_delay</code></td><td><div class='docblock'><p>Latency of the plugin in samples.</p>
+
+<p>This reports how many samples it takes for the plugin to create an output (group delay).</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.preset_chunks'><code>preset_chunks</code></td><td><div class='docblock'><p>Indicates that preset data is handled in formatless chunks.</p>
+
+<p>If false, host saves and restores plugin by reading/writing parameter data. If true, it is
+up to the plugin to manage saving preset data by implementing the
+<code>{get, load}_{preset, bank}_chunks()</code> methods. Default is <code>false</code>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.f64_precision'><code>f64_precision</code></td><td><div class='docblock'><p>Indicates whether this plugin can process f64 based <code>AudioBuffer</code> buffers.</p>
+
+<p>Default is <code>true</code>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.silent_when_stopped'><code>silent_when_stopped</code></td><td><div class='docblock'><p>If this is true, the plugin will not produce sound when the input is silence.</p>
+
+<p>Default is <code>false</code>.</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../vst2/plugin/struct.Info.html' title='vst2::plugin::Info'>Info</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../vst2/plugin/struct.Info.html' title='vst2::plugin::Info'>Info</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../vst2/plugin/struct.Info.html' title='vst2::plugin::Info'>Info</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../vst2/plugin/struct.Info.html' title='vst2::plugin::Info'>Info</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../vst2/plugin/struct.Info.html' title='vst2::plugin::Info'>Info</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+            <p>
+                Search functions by type signature (e.g.
+                <code>vec -> usize</code>)
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SurroundConfig` enum in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SurroundConfig">
+
+    <title>vst2::channels::SurroundConfig - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>channels</a></p><script>window.sidebarCurrent = {name: 'SurroundConfig', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>channels</a>::<wbr><a class='enum' href=''>SurroundConfig</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-5016' class='srclink' href='../../src/vst2/channels.rs.html#112-162' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum SurroundConfig {
+    S3_0,
+    S3_1,
+    S4_0,
+    S4_1,
+    S5_0,
+    S5_1,
+    S6_0,
+    S6_1,
+    S7_0,
+    S7_1,
+    S8_0,
+    S8_1,
+    S10_2,
+}</pre><div class='docblock'><p>Possible surround speaker configurations.</p>
+</div><h2 class='variants'>Variants</h2>
+<table><tr><td id='variant.S3_0'><code>S3_0</code></td><td><div class='docblock'><p>3.0 surround sound.
+Cinema: L R C
+Music: L R S</p>
+</div></td></tr><tr><td id='variant.S3_1'><code>S3_1</code></td><td><div class='docblock'><p>3.1 surround sound.
+Cinema: L R C Lfe
+Music: L R Lfe S</p>
+</div></td></tr><tr><td id='variant.S4_0'><code>S4_0</code></td><td><div class='docblock'><p>4.0 surround sound.
+Cinema: L R C S (LCRS)
+Music: L R Ls Rs (Quadro)</p>
+</div></td></tr><tr><td id='variant.S4_1'><code>S4_1</code></td><td><div class='docblock'><p>4.1 surround sound.
+Cinema: L R C Lfe S (LCRS + Lfe)
+Music: L R Ls Rs (Quadro + Lfe)</p>
+</div></td></tr><tr><td id='variant.S5_0'><code>S5_0</code></td><td><div class='docblock'><p>5.0 surround sound.
+Cinema and music: L R C Ls Rs</p>
+</div></td></tr><tr><td id='variant.S5_1'><code>S5_1</code></td><td><div class='docblock'><p>5.1 surround sound.
+Cinema and music: L R C Lfe Ls Rs</p>
+</div></td></tr><tr><td id='variant.S6_0'><code>S6_0</code></td><td><div class='docblock'><p>6.0 surround sound.
+Cinema: L R C Ls Rs Cs
+Music: L R Ls Rs Sl Sr</p>
+</div></td></tr><tr><td id='variant.S6_1'><code>S6_1</code></td><td><div class='docblock'><p>6.1 surround sound.
+Cinema: L R C Lfe Ls Rs Cs
+Music: L R Ls Rs Sl Sr</p>
+</div></td></tr><tr><td id='variant.S7_0'><code>S7_0</code></td><td><div class='docblock'><p>7.0 surround sound.
+Cinema: L R C Ls Rs Lc Rc
+Music: L R C Ls Rs Sl Sr</p>
+</div></td></tr><tr><td id='variant.S7_1'><code>S7_1</code></td><td><div class='docblock'><p>7.1 surround sound.
+Cinema: L R C Lfe Ls Rs Lc Rc
+Music: L R C Lfe Ls Rs Sl Sr</p>
+</div></td></tr><tr><td id='variant.S8_0'><code>S8_0</code></td><td><div class='docblock'><p>8.0 surround sound.
+Cinema: L R C Ls Rs Lc Rc Cs
+Music: L R C Ls Rs Cs Sl Sr</p>
+</div></td></tr><tr><td id='variant.S8_1'><code>S8_1</code></td><td><div class='docblock'><p>8.1 surround sound.
+Cinema: L R C Lfe Ls Rs Lc Rc Cs
+Music: L R C Lfe Ls Rs Cs Sl Sr</p>
+</div></td></tr><tr><td id='variant.S10_2'><code>S10_2</code></td><td><div class='docblock'><p>10.2 surround sound.
+Cinema + Music: L R C Lfe Ls Rs Tfl Tfc Tfr Trl Trr Lfe2</p>
+</div></td></tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+            <p>
+                Search functions by type signature (e.g.
+                <code>vec -> usize</code>)
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

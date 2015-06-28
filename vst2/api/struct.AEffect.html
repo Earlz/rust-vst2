@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AEffect` struct in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AEffect">
+
+    <title>vst2::api::AEffect - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>api</a></p><script>window.sidebarCurrent = {name: 'AEffect', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>api</a>::<wbr><a class='struct' href=''>AEffect</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-391' class='srclink' href='../../src/vst2/api.rs.html#48-130' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AEffect {
+    pub magic: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub dispatcher: <a class='type' href='../../vst2/api/type.DispatcherProc.html' title='vst2::api::DispatcherProc'>DispatcherProc</a>,
+    pub _process: <a class='type' href='../../vst2/api/type.ProcessProc.html' title='vst2::api::ProcessProc'>ProcessProc</a>,
+    pub setParameter: <a class='type' href='../../vst2/api/type.SetParameterProc.html' title='vst2::api::SetParameterProc'>SetParameterProc</a>,
+    pub getParameter: <a class='type' href='../../vst2/api/type.GetParameterProc.html' title='vst2::api::GetParameterProc'>GetParameterProc</a>,
+    pub numPrograms: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub numParams: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub numInputs: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub numOutputs: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub flags: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub reserved1: <a href='http://doc.rust-lang.org/nightly/std/primitive.isize.html'>isize</a>,
+    pub reserved2: <a href='http://doc.rust-lang.org/nightly/std/primitive.isize.html'>isize</a>,
+    pub initialDelay: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub _realQualities: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub _offQualities: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub _ioRatio: <a href='http://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub object: <a href='http://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='../../libc/types/common/c95/enum.c_void.html' title='libc::types::common::c95::c_void'>c_void</a></a>,
+    pub user: <a href='http://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='../../libc/types/common/c95/enum.c_void.html' title='libc::types::common::c95::c_void'>c_void</a></a>,
+    pub uniqueId: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub version: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>,
+    pub processReplacing: <a class='type' href='../../vst2/api/type.ProcessProc.html' title='vst2::api::ProcessProc'>ProcessProc</a>,
+    pub processReplacingF64: <a class='type' href='../../vst2/api/type.ProcessProcF64.html' title='vst2::api::ProcessProcF64'>ProcessProcF64</a>,
+    pub future: <a href='http://doc.rust-lang.org/nightly/std/primitive.array.html'>[<a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>; 56]</a>,
+}</pre><div class='docblock'><p>Used with the VST API to pass around plugin information.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.magic'><code>magic</code></td><td><div class='docblock'><p>Magic number. Must be <code>[&#39;V&#39;, &#39;S&#39;, &#39;T&#39;, &#39;P&#39;]</code>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.dispatcher'><code>dispatcher</code></td><td><div class='docblock'><p>Host to plug-in dispatcher.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield._process'><code>_process</code></td><td><div class='docblock'><p>Accumulating process mode is deprecated in VST 2.4! Use <code>processReplacing</code> instead!</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.setParameter'><code>setParameter</code></td><td><div class='docblock'><p>Set value of automatable parameter.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.getParameter'><code>getParameter</code></td><td><div class='docblock'><p>Get value of automatable parameter.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.numPrograms'><code>numPrograms</code></td><td><div class='docblock'><p>Number of programs (Presets).</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.numParams'><code>numParams</code></td><td><div class='docblock'><p>Number of parameters. All programs are assumed to have this many parameters.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.numInputs'><code>numInputs</code></td><td><div class='docblock'><p>Number of audio inputs.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.numOutputs'><code>numOutputs</code></td><td><div class='docblock'><p>Number of audio outputs.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.flags'><code>flags</code></td><td><div class='docblock'><p>Bitmask made of values from api::flags.</p>
+<pre id='rust-example-rendered' class='rust '>
+<span class='kw'>use</span> <span class='ident'>vst2</span>::<span class='ident'>api</span>::<span class='ident'>flags</span>;
+<span class='kw'>let</span> <span class='ident'>flags</span> <span class='op'>=</span> <span class='ident'>flags</span>::<span class='ident'>CAN_REPLACING</span> <span class='op'>|</span> <span class='ident'>flags</span>::<span class='ident'>CAN_DOUBLE_REPLACING</span>;
+<span class='comment'>// ...</span>
+</pre>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.reserved1'><code>reserved1</code></td><td><div class='docblock'><p>Reserved for host, must be 0.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.reserved2'><code>reserved2</code></td><td><div class='docblock'><p>Reserved for host, must be 0.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.initialDelay'><code>initialDelay</code></td><td><div class='docblock'><p>For algorithms which need input in the first place (Group delay or latency in samples).</p>
+
+<p>This value should be initially in a resume state.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield._realQualities'><code>_realQualities</code></td><td><div class='docblock'><p>Deprecated unused member.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield._offQualities'><code>_offQualities</code></td><td><div class='docblock'><p>Deprecated unused member.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield._ioRatio'><code>_ioRatio</code></td><td><div class='docblock'><p>Deprecated unused member.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.object'><code>object</code></td><td><div class='docblock'><p>Void pointer usable by api to store object data.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.user'><code>user</code></td><td><div class='docblock'><p>User defined pointer.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.uniqueId'><code>uniqueId</code></td><td><div class='docblock'><p>Registered unique identifier (register it at Steinberg 3rd party support Web). This is used
+to identify a plug-in during save+load of preset and project.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.version'><code>version</code></td><td><div class='docblock'><p>Plug-in version (e.g. 1100 for v1.1.0.0).</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.processReplacing'><code>processReplacing</code></td><td><div class='docblock'><p>Process audio samples in replacing mode.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.processReplacingF64'><code>processReplacingF64</code></td><td><div class='docblock'><p>Process double-precision audio samples in replacing mode.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.future'><code>future</code></td><td><div class='docblock'><p>Reserved for future use (please zero).</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../vst2/api/struct.AEffect.html' title='vst2::api::AEffect'>AEffect</a></code></h3><div class='impl-items'><h4 id='method.get_plugin' class='method'><code>unsafe fn <a href='#method.get_plugin' class='fnname'>get_plugin</a>(&amp;mut self) -&gt; &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../../vst2/plugin/trait.Plugin.html' title='vst2::plugin::Plugin'>Plugin</a>&gt;</code></h4>
+<div class='docblock'><p>Return handle to Plugin object. Only works for plugins created using this library.</p>
+</div><h4 id='method.drop_plugin' class='method'><code>unsafe fn <a href='#method.drop_plugin' class='fnname'>drop_plugin</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Drop the Plugin object. Only works for plugins created using this library.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+            <p>
+                Search functions by type signature (e.g.
+                <code>vec -> usize</code>)
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>
